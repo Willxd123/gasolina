@@ -3,76 +3,333 @@ body {
     background-color: #f5f7fa;
     margin: 0;
     padding: 20px;
+    line-height: 1.6;
 }
 
 h2 {
     color: #2c3e50;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
+/* Información educativa sobre el patrón */
+.patron-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto 25px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.patron-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.patron-info p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Contenedor principal del formulario */
 form {
     background-color: #ffffff;
     border-radius: 8px;
-    padding: 20px;
+    padding: 25px;
     max-width: 500px;
     margin: 0 auto 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+}
+
+/* Secciones del formulario */
+.form-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #ecf0f1;
+    transition: border-color 0.3s ease;
+}
+
+.form-section:hover {
+    border-left-color: #3498db;
+}
+
+.form-section.combustible-section {
+    background: linear-gradient(90deg, #fff5f5 0%, #f0f8ff 100%);
 }
 
 label {
     display: block;
-    margin-top: 15px;
+    margin-bottom: 8px;
     font-weight: bold;
     color: #34495e;
+    font-size: 14px;
 }
 
-select,
-input[type="number"] {
+/* Indicadores visuales por tipo de combustible */
+select[name="tipo_combustible_id"] {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select[name="tipo_combustible_id"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 10px;
     margin-top: 5px;
     border: 1px solid #bdc3c7;
     border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
 }
 
+select:focus, input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+/* Información de ayuda */
+.help-text {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 5px;
+    padding: 8px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    border-left: 3px solid #95a5a6;
+}
+
+.help-text.important {
+    background-color: #fff3cd;
+    border-left-color: #ffc107;
+    color: #856404;
+}
+
+/* Botón mejorado */
 button {
-    margin-top: 20px;
-    background-color: #3498db;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
-    padding: 10px 18px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #2980b9;
+    background: linear-gradient(135deg, #2980b9 0%, #1f618d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.resultado {
+button:active {
+    transform: translateY(0);
+}
+
+/* Resultado mejorado con información del algoritmo */
+.resultado-container {
+    max-width: 500px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+    overflow: hidden;
+}
+
+.resultado-header {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15px;
     text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-    color: #27ae60;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.resultado-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.resultado-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.resultado-principal {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.algoritmo-info {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.algoritmo-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.algoritmo-info p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Iconos para tipos de combustible */
+.tipo-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.tipo-gasolina { background-color: #e74c3c; }
+.tipo-diesel { background-color: #3498db; }
+.tipo-gnv { background-color: #2ecc71; }
+
+/* Error mejorado */
 .error {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
     text-align: center;
     font-size: 16px;
-    color: #c0392b;
-    margin-top: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
 }
 
-.boton-volver {
-    display: block;
+/* Información educativa por tipo de combustible */
+.tipos-info {
+    max-width: 500px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.tipos-info-header {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+    color: white;
+    padding: 15px;
     text-align: center;
-    margin-top: 20px;
-    color: #2980b9;
+}
+
+.tipos-info-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.tipo-item {
+    padding: 15px;
+    border-bottom: 1px solid #ecf0f1;
+    display: flex;
+    align-items: center;
+}
+
+.tipo-item:last-child {
+    border-bottom: none;
+}
+
+.tipo-item .icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.tipo-item .info {
+    flex: 1;
+}
+
+.tipo-item .nombre {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.tipo-item .descripcion {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* Botón volver mejorado */
+.boton-volver {
+    display: inline-block;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    background-color: #95a5a6;
+    color: white;
     text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    max-width: 200px;
+    display: block;
 }
 
 .boton-volver:hover {
-    text-decoration: underline;
+    background-color: #7f8c8d;
+    text-decoration: none;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.resultado-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    
+    form, .patron-info, .tipos-info, .resultado-container {
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: none;
+    }
+    
+    .resultado-principal {
+        font-size: 20px;
+    }
 }
